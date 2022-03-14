@@ -11,6 +11,38 @@ struct Question {
     let title: String
     let responseType: ResponseType
     let answers: [Answer]
+    
+    func getQuestion() -> [Question] {
+        [
+            Question(title: "Какую пищу вы предпочитаете?",
+                     responseType: .single,
+                     answers: [
+                        Answer(title: "Стейк", animal: .dog),
+                        Answer(title: "Рыба", animal: .cat),
+                        Answer(title: "Морковь", animal: .rabbit),
+                        Answer(title: "Кукуруза", animal: .pig),
+                     ]
+                    ),
+            Question(title: "Что Вам нравится больше?",
+                     responseType: .multiply,
+                     answers: [
+                        Answer(title: "Плавать", animal: .dog),
+                        Answer(title: "Спать", animal: .cat),
+                        Answer(title: "Обнимать", animal: .rabbit),
+                        Answer(title: "Есть", animal: .pig),
+                     ]
+                    ),
+            Question(title: "Любите ли поездки на машине?",
+                     responseType: .ranged,
+                     answers: [
+                        Answer(title: "Ненавижу", animal: .cat),
+                        Answer(title: "Нервничаю", animal: .rabbit),
+                        Answer(title: "Незамечаю", animal: .pig),
+                        Answer(title: "Обожаю", animal: .dog),
+                     ]
+                    )
+        ]
+    }
 }
 
 enum ResponseType {
